@@ -47,7 +47,7 @@ p {
       -ms-flex-align: center;
           align-items: center;
   height: 85vh;
-  overflow: hidden;
+  overflow: none;
 }
 
 @media screen and (max-width: 960px) {
@@ -56,7 +56,7 @@ p {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    overflow: none;
+    overflow: hidden;
     height: auto;
   }
 }
@@ -87,6 +87,10 @@ p {
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
   }
+}
+
+.container-img {
+  margin: 20px;
 }
 
 .btn {
@@ -205,6 +209,56 @@ p {
   margin-left: 16px;
 }
 
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.bg-video::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: block;
+  background: linear-gradient(101.47deg, #0A0C10 26.38%, rgba(10, 12, 16, 0.8) 49.41%, #0A0C10 72.52%);
+}
+
+.bg-loader {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+  background: linear-gradient(225deg, #EA1D22 0%, #740c0e 100%);
+}
+
 header {
   width: 100%;
   padding-top: 16px;
@@ -255,9 +309,8 @@ header {
   }
 }
 
-.logo {
+.menu-logo {
   max-width: 88px;
-  border: 1px solid red;
   padding: 8px;
 }
 
@@ -312,7 +365,7 @@ header {
 
 .nav-social svg {
   cursor: pointer;
-  margin-left: 16px;
+  margin: 0 8px;
   width: 20px;
 }
 
@@ -346,6 +399,48 @@ header {
 @media screen and (max-width: 960px) {
   .burger-menu {
     display: block;
+  }
+}
+
+.logo-spiderman {
+  fill: transparent;
+  -webkit-animation: logo-spiderman 12s ease infinite alternate;
+          animation: logo-spiderman 12s ease infinite alternate;
+}
+
+@-webkit-keyframes logo-spiderman {
+  0% {
+    stroke-width: 0;
+    stroke-dasharray: 1 80;
+    fill: transparent;
+  }
+  25% {
+    stroke-width: 1;
+    stroke-dasharray: 80 0;
+    fill: transparent;
+  }
+  60%,
+  100% {
+    stroke-width: 0.2;
+    fill: #E5E9EF;
+  }
+}
+
+@keyframes logo-spiderman {
+  0% {
+    stroke-width: 0;
+    stroke-dasharray: 1 80;
+    fill: transparent;
+  }
+  25% {
+    stroke-width: 1;
+    stroke-dasharray: 80 0;
+    fill: transparent;
+  }
+  60%,
+  100% {
+    stroke-width: 0.2;
+    fill: #E5E9EF;
   }
 }
 

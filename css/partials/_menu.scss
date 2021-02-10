@@ -30,9 +30,8 @@ header {
     }
 }
 
-.logo {
+.menu-logo {
     max-width: 88px;
-    border: 1px solid red;
     padding: 8px;
 }
 
@@ -73,8 +72,9 @@ header {
     height: 40px;
     svg {
         cursor: pointer;
-        margin-left: 16px;
+        margin: 0 8px;
         width: 20px;
+        // height: 20px;
         path,
         circle {
             transition: 0.7s ease;
@@ -92,6 +92,9 @@ header {
     }
 }
 
+// .social-icon {
+//     width:
+// }
 .burger-menu {
     display: none;
     width: 48px;
