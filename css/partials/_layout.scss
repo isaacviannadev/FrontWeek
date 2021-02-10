@@ -1,28 +1,34 @@
 .container {
-    border: 1px solid red;
     max-width: 1440px;
     margin: 0 auto;
     padding: 36px 16px;
     display: flex;
     align-items: center;
+    height: 85vh;
     overflow: hidden;
+    @include responsive() {
+        flex-direction: column;
+        overflow: none;
+        height: auto;
+    }
 }
 
 .container-info {
     max-width: 576px;
-    border: 1px solid green;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 
-.container-img {
-    border: 1px solid green;
-}
+.container-img {}
 
 .spiderman {
-    width: 150%;
-    transform: translate3d(-250px, 0, 0);
+    width: 130%;
+    transform: translate3d(-190px, 0, 0);
+    @include responsive() {
+        width: 100%;
+        transform: translate3d(0, 0, 0);
+    }
 }
 
 .btn {
@@ -101,6 +107,20 @@
         transform: skewX(-10deg) scale(1.05);
         &::after {
             width: 102%;
+        }
+    }
+}
+
+.info-shop {
+    display: flex;
+    padding: 8px;
+    align-items: center;
+    // border: 1px solid green;
+    margin-top: 16px;
+    svg {
+        width: auto;
+        &+svg {
+            margin-left: 16px;
         }
     }
 }

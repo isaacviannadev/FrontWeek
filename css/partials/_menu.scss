@@ -1,6 +1,7 @@
 header {
     width: 100%;
     padding-top: 16px;
+    margin-bottom: 16px;
 }
 
 .navbar {
@@ -21,13 +22,18 @@ header {
 .nav-list {
     display: flex;
     list-style: none;
-    li+li {
+    li {
         margin-left: 24px;
+    }
+    @include responsive() {
+        display: none;
     }
 }
 
 .logo {
     max-width: 88px;
+    border: 1px solid red;
+    padding: 8px;
 }
 
 .nav-link {
@@ -80,5 +86,19 @@ header {
                 transform: translate3d(0, -2px, 0);
             }
         }
+    }
+    @include responsive() {
+        display: none;
+    }
+}
+
+.burger-menu {
+    display: none;
+    width: 48px;
+    height: 48px;
+    background-color: #e91d22;
+    border-radius: 8px;
+    @include responsive() {
+        display: block;
     }
 }
